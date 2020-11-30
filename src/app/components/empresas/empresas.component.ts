@@ -61,19 +61,16 @@ export class EmpresasComponent implements OnInit {
       Activo: [true]
     });
     this.FormReg = this.formBuilder.group({
-      IdArticulo: [0],
+      IdEmpresa: [0],
       Nombre: [
         "",
         [Validators.required, Validators.maxLength(50)]
       ],
-      Precio: [null, [Validators.required, Validators.pattern("[0-9]{1,7}")]],
-      Stock: [null, [Validators.required, Validators.pattern("[0-9]{1,7}")]],
-      CodigoDeBarra: [
-        "",
-        [Validators.required, Validators.pattern("[0-9]{13}")]
-      ],
-      IdArticuloFamilia: ["", [Validators.required]],
-      FechaAlta: [
+      
+      CantidadEmpleados: [null, [Validators.required, Validators.pattern("[0-9]{1,7}")]],
+      
+      IdEmpresa: ["", [Validators.required]],
+      FechaFundacion: [
         "",
         [
           Validators.required,
