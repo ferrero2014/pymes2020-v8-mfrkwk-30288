@@ -20,16 +20,12 @@ export class ClientesService {
     this.resourceUrl = "https://pav2.azurewebsites.net/api/clientes/";
   }
 
-  get(Nombre: string, Activo: boolean, Pagina: number) {
+  get(Nombre: string, FechaFundacion: string, CantidadEmpleados: number) {
     let params = new HttpParams();
     if (Nombre != null) {
       params = params.append("Nombre", Nombre);
     }
-    if (Activo != null) {
-      // para evitar error de null.ToString()
-      params = params.append("Activo", Activo.toString());
-    }
-    params = params.append("Pagina", Pagina.toString());
+    
 
     return this.httpClient.get(this.resourceUrl, { params: params });
   }
@@ -38,11 +34,11 @@ export class ClientesService {
     return this.httpClient.get(this.resourceUrl + Id);
   }
 
-  post(obj: Articulo) {
+  post(obj: Cliente) {
     return this.httpClient.post(this.resourceUrl, obj);
   }
 
-  put(Id: number, obj: Articulo) {
+  put(Id: number, obj: Cliente) {
     return this.httpClient.put(this.resourceUrl + Id, obj);
   }
 
