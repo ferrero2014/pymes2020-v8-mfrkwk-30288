@@ -210,7 +210,9 @@ export class EmpresasComponent implements OnInit {
   Volver() {
     this.AccionABMC = "L";
   }
-
+  Cancelar() {
+    this.AccionABMC = "";
+  }
   ImprimirListado() {
     this.modalDialogService.Alert("Sin desarrollar...");
   }

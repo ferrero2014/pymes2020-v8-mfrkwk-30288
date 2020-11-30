@@ -151,13 +151,14 @@
 
 	<!-- Botones Grabar, Cancelar/Volver' -->
 	<div class="row justify-content-center">
-		<button type="button" *ngIf="AccionABMC!=='C'" class="btn btn-primary" (click)="Grabar()">
+		<button type="button"  class="btn btn-primary" (click)="Grabar()">
             <span class="fas fa-check"></span> Grabar
         </button>
 		&nbsp;
-		<button type="button" class="btn btn-warning" (click)="Volver()">
-            <span class="fas fa-undo"></span> {{AccionABMC=='C' ? 'Volver' : 'Cancelar'}}
+		<button type="button" class="btn btn-primary"(click)="Cancelar()">
+            <span class="fas fa-undo"></span> Cancelar
         </button>
+        &nbsp;
 	</div>
 
 
