@@ -7,7 +7,7 @@
             Nombre:
         </label>
 		<div class="col-sm-3">
-			<input type="text" class="form-control" formControlName="Nombre" maxlength="55"/>
+			<input type="text" class="form-control" formControlName="Nombre" maxlength="50"/>
         </div>
 			<label class="col-form-label col-sm-2  text-left">
             Activo:
@@ -39,17 +39,14 @@
 		<thead>
 			<tr>
 				<th class="text-center">Nombre</th>
-				<th class="text-center">Precio</th>
-				<th class="text-center">Stock</th>
-				<th class="text-center">Fecha de Alta</th>
-				<th>Familia</th>
-				<th class="text-center">Activo</th>
-				<th class="text-center text-nowrap">Acciones</th>
-			</tr>
+        <th class="text-center">Fecha Fundacion</th>
+				<th class="text-center">Cantidad de Empleados</th>
+				</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor="let dto of Lista">
 				<td>{{dto.Nombre | uppercase}}</td>
+        <td>{{dto.FechaAlta | date:'dd/MM/yyyy'}}</td>
 				<td class="text-right">{{dto.Precio | currency:'$'}}</td>
 				<td class="text-right">{{dto.Stock}}</td>
 				<td>{{dto.FechaAlta | date:'dd/MM/yyyy'}}</td>
