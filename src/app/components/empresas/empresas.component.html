@@ -100,120 +100,53 @@
                     Dato requerido.
                 </span>
 				<span class="text-danger" *ngIf="(FormReg.controls.Nombre.errors?.minlength || FormReg.controls.Nombre.errors?.maxlength) ">
-                    Dato texto, 4 a 55 caracteres.
+                    Dato texto,  hasta 50 caracteres.
                 </span>
 
 			</div>
 		</div>
-
-		<!--campo precio-->
-		<div class="row form-group">
-			<label class="col-form-label col-sm-2 col-sm-offset-2">Precio <span
-                    class="text-danger">*</span></label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" formControlName="Precio"
-            [ngClass]="{'is-invalid': (FormReg.controls.Precio.touched || submitted)  
-            && FormReg.controls.Precio.errors}" />
-				<span class="text-danger" *ngIf="(FormReg.controls.Precio.touched || submitted) 
-                       && FormReg.controls.Precio.errors?.required">
-                    Dato requerido.
-                </span>
-				<span class="text-danger" *ngIf="FormReg.controls.Precio.errors?.pattern">
-                    Dato numérico, 1 a 7 dígitos.
-                </span>
-			</div>
-		</div>
-
-
-		<!--campo stock-->
+	
+		<!--campo fechafundacion-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" >
-                Stock <span class="text-danger">*</span>
-            </label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" formControlName="Stock"
-        [ngClass]="{'is-invalid': (FormReg.controls.Stock.touched || submitted)  
-            && FormReg.controls.Stock.errors}" />
-				<span class="text-danger" *ngIf="(FormReg.controls.Stock.touched || submitted) 
-                        && FormReg.controls.Stock.errors?.required">
-                    Dato requerido.
-                </span>
-				<span class="text-danger" *ngIf="FormReg.controls.Stock.errors?.pattern">
-                    Dato numérico, 1 a 7 dígitos.
-                </span>
-			</div>
-		</div>
-
-		<!--campo codigodebarra-->
-		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" >
-                Codigo De Barra <span class="text-danger">*</span>
-            </label>
-			<div class="col-sm-6">
-				<input type="text"  class="form-control" formControlName="CodigoDeBarra"
-        [ngClass]="{'is-invalid': (FormReg.controls.CodigoDeBarra.touched || submitted)  
-            && FormReg.controls.CodigoDeBarra.errors}" />
-				<span class="text-danger" *ngIf="(FormReg.controls.CodigoDeBarra.touched || submitted) 
-                       && FormReg.controls.CodigoDeBarra.errors?.required">
-                    Dato requerido.
-                </span>
-				<span class="text-danger" *ngIf="FormReg.controls.CodigoDeBarra.errors?.pattern">
-                    Dato numérico, 13 dígitos.
-                </span>
-			</div>
-		</div>
-
-		<!--campo idarticulofamilia-->
-		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" >
-                Familia <span class="text-danger">*</span>
-            </label>
-			<div class="col-sm-6">
-				<select  class="form-control" formControlName="IdArticuloFamilia"
-        [ngClass]="{'is-invalid': (FormReg.controls.IdArticuloFamilia.touched || submitted)  
-            && FormReg.controls.IdArticuloFamilia.errors}" >
-                    <option *ngFor="let opt of Familias" [ngValue]="opt.IdArticuloFamilia">
-                        ‌{{ opt.Nombre }}
-                    <option>
-                </select>
-				<span class="text-danger" *ngIf="(FormReg.controls.IdArticuloFamilia.touched || submitted) 
-                        && FormReg.controls.IdArticuloFamilia.errors?.required">
-                    Dato requerido.
-                </span>
-			</div>
-		</div>
-
-		<!--campo fechaalta-->
-		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2">Fecha de alta <span
+			<label class="col-form-label col-sm-2 col-sm-offset-2">Fecha de Fundacion <span
                     class="text-danger">*</span></label>
 			<div class="col-sm-6">
 				<input class="form-control"
-                            formControlName="FechaAlta"
-                           [ngClass]="{'is-invalid': (FormReg.controls.FechaAlta.touched || submitted)  
-            && FormReg.controls.FechaAlta.errors}" />
+                            formControlName="FechaFundacion"
+                           [ngClass]="{'is-invalid': (FormReg.controls.FechaFundacion.touched || submitted)  
+            && FormReg.controls.FechaFundacion.errors}" />
 
-				<span class="text-danger" *ngIf="(FormReg.controls.FechaAlta.touched || submitted) 
-                       && FormReg.controls.FechaAlta.errors?.required">
+				<span class="text-danger" *ngIf="(FormReg.controls.FechaFundacion.touched || submitted) 
+                       && FormReg.controls.FechaFundacion.errors?.required">
                     Dato requerido.
                 </span>
-				<span class="text-danger" *ngIf="FormReg.controls.FechaAlta.errors?.pattern">
+				<span class="text-danger" *ngIf="FormReg.controls.FechaFundacion.errors?.pattern">
                     Dato fecha, formato dd/mm/aaaa.
         </span>
 			</div>
 		</div>
 
-		<!--campo activo-->
+
+		<!--campo cantidad empleados-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" >Activo</label>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" >
+                CantidadEmpleados <span class="text-danger">*</span>
+            </label>
 			<div class="col-sm-6">
-				<select disabled class="form-control" formControlName="Activo">
-                    <option *ngFor="let opt of OpcionesActivo" [ngValue]="opt.Id">
-                        ‌{{ opt.Nombre }}
-                    <option>
-                </select>
+				<input type="text" class="form-control" formControlName="CantidadEmpleados"
+        [ngClass]="{'is-invalid': (FormReg.controls.CantidadEmpleados.touched || submitted)  
+            && FormReg.controls.CantidadEmpleados.errors}" />
+				<span class="text-danger" *ngIf="(FormReg.controls.CantidadEmpleados.touched || submitted) 
+                        && FormReg.controls.CantidadEmpleados.errors?.required">
+                    Dato requerido.
+                </span>
+				<span class="text-danger" *ngIf="FormReg.controls.Stock.errors?.pattern">
+                    Dato numérico, 1 a 6 dígitos.
+                </span>
 			</div>
 		</div>
+
+			
 	</fieldset>
 
 	<!-- Botones Grabar, Cancelar/Volver' -->
