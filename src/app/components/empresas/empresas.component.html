@@ -13,11 +13,10 @@
             Fecha Fundacion:
         </label>
 		<div class="col-sm-3">
+      
 			<input type="text" class="form-control" formControlName="Nombre" maxlength="50"/>
         </div>
-			<label class="col-form-label col-sm-2  text-left">
-            Activo:
-        </label>
+			
 			<div class="col-sm-3">
 				<select class="form-control" formControlName="Activo">
             <option *ngFor="let opt of OpcionesActivo" [ngValue]="opt.Id">
@@ -53,23 +52,8 @@
 			<tr *ngFor="let dto of Lista">
 				<td>{{dto.Nombre | uppercase}}</td>
         <td>{{dto.FechaFundacion | date:'dd/MM/yyyy'}}</td>
-				<td class="text-right">{{dto.Precio | currency:'$'}}</td>
-				<td class="text-right">{{dto.Stock}}</td>
-				<td>{{dto.FechaAlta | date:'dd/MM/yyyy'}}</td>
-				<td>{{GetArticuloFamiliaNombre(dto.IdArticuloFamilia)}}</td>
-				<td>{{dto.Activo ? 'SI' : 'NO'}}</td>
-				<td class="text-center text-nowrap">
-					<button type="button" class="btn btn-sm btn-outline-primary" title="Ver" (click)="Consultar(dto)">
-                    <span class="fas fa-eye"></span>
-                </button>
-					<button type="button" class="btn btn-sm btn-outline-primary" title="Modificar" (click)="Modificar(dto)">
-                    <span class="fas fa-pencil-alt"></span>
-                </button>
-					<button type="button" class="btn btn-sm btn-outline-{{ dto.Activo ? 'danger':'success'}}"
-                    title="{{dto.Activo ? 'Desactivar':'Activar'}}" (click)="ActivarDesactivar(dto)">
-                    <span class="fas fa-{{dto.Activo ? 'times':'check'}}"></span>
-                </button>
-				</td>
+				<td class="text-right">{{dto.CantidadEmpleados}}</td>
+			
 			</tr>
 		</tbody>
 	</table>
