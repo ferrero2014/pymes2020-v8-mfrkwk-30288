@@ -33,7 +33,7 @@
 			&nbsp;
 			<button type="button" class="btn btn-primary" (click)="Agregar()">
             <span class="fas fa-plus"> </span> 
-            Agregar
+            Alta
         </button>
 		</div>
 </form>
@@ -159,6 +159,7 @@
             <span class="fas fa-undo"></span> {{AccionABMC=='C' ? 'Volver' : 'Cancelar'}}
         </button>
 	</div>
+
 
 	<!--texto: Revisar los datos ingresados...-->
 	<div id="divMsjFormRegistro" *ngIf="submitted && FormReg.invalid" class="row alert alert-danger">
