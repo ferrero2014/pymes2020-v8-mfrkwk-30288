@@ -8,6 +8,6 @@ export const Empresas: Empresa[] = [
   {
     IdArticulo: 1,
     Nombre: "ARCOR",
-    FechaFundacion:20/08/2000,
+    FechaFundacion:20,
     CantidadEnpleados:30
   },

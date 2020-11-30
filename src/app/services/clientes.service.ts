@@ -6,18 +6,18 @@ import {
   HttpParams
 } from "@angular/common/http";
 import { of } from "rxjs";
-import { Cliente } from "../models/cliente";
+import { Empresas } from "../models/empresa";
 
 @Injectable({
   providedIn: "root"
 })
-export class ClientesService {
+export class EmpresasService {
   resourceUrl: string;
   constructor(private httpClient: HttpClient) {
     // la barra al final del resourse url es importante para los metodos que concatenan el id del recurso (GetById, Put)
     //this.resourceUrl = "https://pavii.ddns.net/api/articulos/";
     //this.resourceUrl = "https://bitgocba.duckdns.org/api/Articulos/";
-    this.resourceUrl = "https://pav2.azurewebsites.net/api/clientes/";
+    this.resourceUrl = "https://pav2.azurewebsites.net/api/empresas/";
   }
 
   get(Nombre: string, FechaFundacion: string, CantidadEmpleados: number) {
@@ -34,11 +34,11 @@ export class ClientesService {
     return this.httpClient.get(this.resourceUrl + Id);
   }
 
-  post(obj: Cliente) {
+  post(obj: Empresa) {
     return this.httpClient.post(this.resourceUrl, obj);
   }
 
-  put(Id: number, obj: Cliente) {
+  put(Id: number, obj: Empresa) {
     return this.httpClient.put(this.resourceUrl + Id, obj);
   }
 
